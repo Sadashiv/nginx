@@ -68,3 +68,6 @@ server {
     }
 }
 
+sudo install nginx -y
+sudo mkdir -p /etc/nginx/certs
+sudo openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/certs/privateKey.key -out /etc/nginx/certs/certificate.crt
