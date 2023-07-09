@@ -71,3 +71,9 @@ server {
 sudo install nginx -y
 sudo mkdir -p /etc/nginx/certs
 sudo openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/certs/privateKey.key -out /etc/nginx/certs/certificate.crt
+
+Without prompt subject details
+openssl req \
+    -newkey rsa:4096 -nodes -sha256 -keyout harbor.key \
+    -x509 -days 365 -out harbor.crt \
+    -subj "/CN=INDIA/C=IN/ST=KA/L=Bengaluru/O=sadashiv"
